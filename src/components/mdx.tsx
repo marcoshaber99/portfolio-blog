@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import ContextVisualization from "./ContextVisualization";
+import PerformanceVisualization from "./PerformanceVisualization";
 import { MDXComponents } from "mdx/types";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
@@ -125,6 +126,7 @@ export const globalComponents: MDXComponents = {
   a: CustomLink,
   Table,
   ContextVisualization,
+  PerformanceVisualization,
   code: CodeBlock as React.ComponentType<
     React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
   >,
