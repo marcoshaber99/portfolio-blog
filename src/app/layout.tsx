@@ -59,7 +59,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen dark:bg-[conic-gradient(from_270deg_at_50%_-20%,#020420_0%,#020420_50%,#0F1835_60%,#1A2647_70%,#0F1835_80%,#020420_90%,#020420_100%)] font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
+          "min-h-screen dark:bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] dark:from-gray-800/70 dark:via-gray-900/70 dark:to-black dark:from-0% dark:via-20% font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
           fontSans.variable
         )}
       >
