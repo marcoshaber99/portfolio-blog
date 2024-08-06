@@ -57,7 +57,6 @@ export const DATA = {
   work: [
     {
       company: "PANALINE",
-      href: "https://atomic.finance",
       badges: [],
       location: "Remote",
       title: "Full Stack Developer",
@@ -71,11 +70,12 @@ export const DATA = {
   education: [
     {
       school: "Frederick University",
-      href: "https://www.frederick.ac.cy",
       degree: "Bachelor's Degree of Computer Science (BCS)",
       logoUrl: "/fred-logo.webp",
       start: "2020",
       end: "2024",
+      description:
+        "I studied computer science at Frederick University, where I gained a Bachelor's Degree of Computer Science (BCS) in 2024. During my studies, I focused on developing software applications and web development projects.",
     },
   ],
   projects: [
