@@ -1,15 +1,14 @@
+import { MDXComponents } from "mdx/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import ContextVisualization from "./ContextVisualization";
-import PerformanceVisualization from "./PerformanceVisualization";
-import { MDXComponents } from "mdx/types";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
+  nightOwl,
   tomorrow,
   vs,
-  nightOwl,
 } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import ContextVisualization from "./ContextVisualization";
 
 function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
   let headers = data.headers.map((header, index) => (
@@ -91,15 +90,26 @@ const CodeBlock = ({
   const language = className
     ? className.replace(/language-/, "")
     : "javascript";
+  
+  if (children.includes('\n')) {
+    return (
+      <div className="my-6">
+        <SyntaxHighlighter
+          language={language}
+          style={nightOwl}
+          showLineNumbers={true}
+          wrapLines={true}
+        >
+          {children}
+        </SyntaxHighlighter>
+      </div>
+    );
+  }
+  
   return (
-    <SyntaxHighlighter
-      language={language}
-      style={nightOwl}
-      showLineNumbers={true}
-      wrapLines={true}
-    >
+    <code className={className}>
       {children}
-    </SyntaxHighlighter>
+    </code>
   );
 };
 
@@ -126,8 +136,17 @@ export const globalComponents: MDXComponents = {
   a: CustomLink,
   Table,
   ContextVisualization,
-  PerformanceVisualization,
-  code: CodeBlock as React.ComponentType<
-    React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>
-  >,
+
+
+  code: ({ className, children }) => {
+    const language = className ? className.replace(/language-/, "") : "";
+    if (language) {
+      return (
+        <CodeBlock className={className}>
+          {children as string}
+        </CodeBlock>
+      );
+    }
+    return <code className={className}>{children}</code>;
+  },
 };
