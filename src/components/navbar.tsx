@@ -10,6 +10,7 @@ import {
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { CameraIcon } from "lucide-react"; // Add this import
 
 export default function Navbar() {
   return (
@@ -67,6 +68,24 @@ export default function Navbar() {
             </TooltipTrigger>
             <TooltipContent>
               <p>Theme</p>
+            </TooltipContent>
+          </Tooltip>
+        </DockIcon>
+        <DockIcon>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href="#photography"
+                className={cn(
+                  buttonVariants({ variant: "ghost", size: "icon" }),
+                  "size-12"
+                )}
+              >
+                <CameraIcon className="size-4" />
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Photography</p>
             </TooltipContent>
           </Tooltip>
         </DockIcon>
