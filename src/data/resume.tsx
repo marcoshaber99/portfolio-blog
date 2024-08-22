@@ -11,7 +11,7 @@ export const DATA = {
   summary:
     "Recent Computer Science graduate from Frederick University with a keen interest in building awesome user experiences. Completed an internship last summer, gaining practical experience in software development. Eager to apply my skills and contribute to innovative projects in the tech industry.",
 
-  avatarUrl: "/me.JPG",
+  avatarUrl: "/me.jpeg",
   skills: [
     "React",
     "Next.js",
