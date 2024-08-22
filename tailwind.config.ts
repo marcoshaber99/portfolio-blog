@@ -26,6 +26,8 @@ const config = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       colors: {
+       'midnight-blue': '#191970',
+        'forest-green': '#228B22',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -1,5 +1,6 @@
 "use client";
 
+import { BlogCard } from "@/components/blog-card"; // You'll need to create this component
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import PhotographySection from "@/components/photography-section";
@@ -150,6 +151,39 @@ export default function Page() {
                   image={project.image}
                   video={project.video}
                   links={project.links}
+                />
+              </BlurFade>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section id="blog">
+        <div className="space-y-12 w-full py-12">
+          <BlurFade delay={BLUR_FADE_DELAY * 17}>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <SectionLabel text="My Blog" />
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  Latest Articles
+                </h2>
+                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Check out my latest thoughts and insights.
+                </p>
+              </div>
+            </div>
+          </BlurFade>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+            {DATA.blogs.map((blog, id) => (
+              <BlurFade
+                key={blog.title}
+                delay={BLUR_FADE_DELAY * 18 + id * 0.05}
+              >
+                <BlogCard
+                  href={blog.href}
+                  title={blog.title}
+                  description={blog.description}
+                  date={blog.date}
+                  image={blog.image}
                 />
               </BlurFade>
             ))}
