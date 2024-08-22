@@ -3,7 +3,7 @@ import { CameraIcon, CodeIcon, HomeIcon, NotebookIcon, PencilLine } from "lucide
 
 export const DATA = {
   name: "Marco Haber",
-  initials: "DV",
+  initials: "MH",
   url: "https://marcohaber.dev",
   location: "Limassol, CY",
   locationLink: "https://www.google.com/maps/place/limassol",
