@@ -23,7 +23,11 @@ const config = {
         "gradient-conic": "conic-gradient(var(--tw-gradient-stops))",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        sans: ['var(--font-soehne)'],
+
+        soehne: ['Soehne', 'sans-serif'],
+        testsoehne: ['TestSohne', 'sans-serif'],
+
       },
       colors: {
        'midnight-blue': '#191970',

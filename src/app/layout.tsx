@@ -3,15 +3,21 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-
+import localFont from 'next/font/local';
+import './fonts.css';
 import "./globals.css";
 
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
+});
+
+const fontSohne = localFont({
+  src: '../../public/fonts/Soehne-Buch.otf',
+  variable: '--font-soehne',
 });
 
 export const metadata: Metadata = {
@@ -56,11 +62,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={fontSohne.variable} suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen dark:bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] dark:from-gray-800/70 dark:via-gray-900/70 dark:to-black dark:from-0% dark:via-20% font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
-          fontSans.variable
+          "min-h-screen font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
+          "dark:bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))]",
+          "dark:from-gray-800/70 dark:via-gray-900/70 dark:to-black dark:from-0% dark:via-20%"
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="light">

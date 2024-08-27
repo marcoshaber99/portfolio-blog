@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Soehne';
+  src: url('/fonts/Soehne-Buch.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'TestSohne';
+  src: url('/fonts/TestSohne.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
