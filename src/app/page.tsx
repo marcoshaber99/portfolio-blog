@@ -1,6 +1,6 @@
 "use client";
 
-import { BlogCard } from "@/components/blog-card"; 
+import { BlogCard } from "@/components/blog-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import PhotographySection from "@/components/photography-section";
@@ -14,12 +14,13 @@ import SkillBadge from "@/components/ui/skill-badge";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import QuoteSection from "@/components/quote-section";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10">
+    <main className="flex flex-col min-h-[100dvh] space-y-8">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
@@ -33,8 +34,7 @@ export default function Page() {
                {DATA.name}
               </TextEffect>
               <BlurFadeText
-                className="max-w-[600px] md:text-xl font-testsoehne"
-                delay={BLUR_FADE_DELAY}
+                className="max-w-[600px] md:text-xl font-testsoehne mt-2"
                 text={DATA.description}
               />
             </div>
@@ -47,16 +47,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id="about">
-        <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">About</h2>
-        </BlurFade>
-        <BlurFade delay={BLUR_FADE_DELAY * 4}>
-          <Markdown className="prose max-w-full text-pretty text-md text-muted-foreground dark:prose-invert font-soehne">
-            {DATA.summary}
-          </Markdown>
-        </BlurFade>
-      </section>
+
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -185,6 +176,12 @@ export default function Page() {
         </div>
       </section>
       <PhotographySection />
+
+      <QuoteSection
+        quote="You have power over your mind - not outside events. Realize this, and you will find strength."
+        author="Marcus Aurelius"
+      />
+
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
