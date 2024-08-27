@@ -66,8 +66,7 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen font-sans antialiased max-w-2xl mx-auto py-12 sm:py-24 px-6",
-          "dark:bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))]",
-          "dark:from-gray-800/70 dark:via-gray-900/70 dark:to-black dark:from-0% dark:via-20%"
+          "bg-[#FCFCFC] dark:bg-[#1C1C1C]"
         )}
       >
         <ThemeProvider attribute="class" defaultTheme="light">

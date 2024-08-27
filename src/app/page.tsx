@@ -1,6 +1,6 @@
 "use client";
 
-import { BlogCard } from "@/components/blog-card"; // You'll need to create this component
+import { BlogCard } from "@/components/blog-card"; 
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import PhotographySection from "@/components/photography-section";
@@ -28,9 +28,9 @@ export default function Page() {
               <TextEffect
                 preset="fade"
                 per="word"
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none font-soehne"
+                className="text-3xl font-bold tracking-wide sm:text-5xl xl:text-6xl/none font-soehne italic"
               >
-                {`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
+               {DATA.name}
               </TextEffect>
               <BlurFadeText
                 className="max-w-[600px] md:text-xl font-testsoehne"
@@ -125,13 +125,9 @@ export default function Page() {
                 <SectionLabel text="My Projects" />
 
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Check out my latest work
+                  My latest projects
                 </h2>
-                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve worked on a variety of projects, from simple
-                  websites to complex web applications. Here are a few of my
-                  favorites.
-                </p>
+               
               </div>
             </div>
           </BlurFade>
@@ -164,11 +160,9 @@ export default function Page() {
               <div className="space-y-2">
                 <SectionLabel text="My Blog" />
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Latest Articles
+                  Thoughts and insights
                 </h2>
-                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Check out my latest thoughts and insights.
-                </p>
+ 
               </div>
             </div>
           </BlurFade>
