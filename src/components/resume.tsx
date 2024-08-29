@@ -73,7 +73,7 @@ export default function ResumeComponent() {
                   <p className="text-sm text-gray-600">Limassol, Cyprus</p>
                 </div>
               </div>
-              <p className="text-sm text-gray-700 mt-1">
+              <p className="text-sm text-gray-700 mt-4">
                 {edu.description}
               </p>
             </div>
