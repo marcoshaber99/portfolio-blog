@@ -26,6 +26,7 @@ interface Props {
     href: string;
   }[];
   className?: string;
+  isPrivate?: boolean;
 }
 
 export function ProjectCard({
@@ -39,13 +40,21 @@ export function ProjectCard({
   video,
   links,
   className,
+  isPrivate = false,
 }: Props) {
   return (
     <Card
       className={
-        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full"
+        "flex flex-col overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full relative"
       }
     >
+      {isPrivate && (
+        <div className="absolute top-2 right-2 z-10">
+          <Badge variant="secondary" className="text-xs">
+            Private Project
+          </Badge>
+        </div>
+      )}
       <Link
         href={href || "#"}
         className={cn("block cursor-pointer", className)}
@@ -107,6 +116,11 @@ export function ProjectCard({
               </Link>
             ))}
           </div>
+        )}
+        {isPrivate && (
+          <p className="text-xs text-muted-foreground mt-2">
+            This project is currently private. Contact for more information.
+          </p>
         )}
       </CardFooter>
     </Card>

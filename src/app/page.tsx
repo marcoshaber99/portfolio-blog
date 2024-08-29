@@ -5,16 +5,18 @@ import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import PhotographySection from "@/components/photography-section";
 import { ProjectCard } from "@/components/project-card";
+import QuoteSection from "@/components/quote-section";
 import { ResumeCard } from "@/components/resume-card";
 import { TextEffect } from "@/components/text-effect";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import SectionLabel from "@/components/ui/section-label";
 import SkillBadge from "@/components/ui/skill-badge";
 import { DATA } from "@/data/resume";
+import { FileText } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
-import QuoteSection from "@/components/quote-section";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -37,7 +39,16 @@ export default function Page() {
                 className="max-w-[600px] md:text-xl font-testsoehne mt-2"
                 text={DATA.description}
               />
+               <BlurFade delay={BLUR_FADE_DELAY * 3}>
+                <Link href="/resume">
+                  <Button variant="outline" size="sm" className="flex items-center gap-2 mt-4">
+                    <FileText className="w-4 h-4" />
+                    Full Resume
+                  </Button>
+                </Link>
+              </BlurFade>
             </div>
+           
             <BlurFade delay={BLUR_FADE_DELAY}>
                 <Avatar className="w-28 h-28 border overflow-hidden">
                   <AvatarImage alt={DATA.name} src={DATA.avatarUrl} className="object-cover" />
@@ -94,7 +105,7 @@ export default function Page() {
           ))}
         </div>
       </section>
-      <section id="skills">
+      {/* <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">Skills</h2>
@@ -107,9 +118,9 @@ export default function Page() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       <section id="projects">
-        <div className="space-y-12 w-full py-12">
+        <div className="space-y-12 w-full py-8">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -138,6 +149,7 @@ export default function Page() {
                   image={project.image}
                   video={project.video}
                   links={project.links}
+                  isPrivate={project.isPrivate}
                 />
               </BlurFade>
             ))}
@@ -145,7 +157,7 @@ export default function Page() {
         </div>
       </section>
       <section id="blog">
-        <div className="space-y-12 w-full py-12">
+        <div className="space-y-12 w-full py-8">
           <BlurFade delay={BLUR_FADE_DELAY * 17}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">

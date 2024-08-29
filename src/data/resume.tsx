@@ -27,29 +27,25 @@ export const DATA = {
     { href: "#photography", icon: CameraIcon, label: "Photography" },
   ],
   contact: {
-    email: "hello@example.com",
-    tel: "+123456789",
+    email: "marcoshaber99@gmail.com",
+    tel: "+357 99399150",
     social: {
       GitHub: {
         name: "GitHub",
         url: "https://github.com/marcoshaber99",
         icon: Icons.github,
-
         navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/marcohaber99/",
         icon: Icons.linkedin,
-
         navbar: true,
       },
-
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:marcoshaber99@gmail.com",
         icon: Icons.email,
-
         navbar: false,
       },
     },
@@ -83,11 +79,12 @@ export const DATA = {
     {
       title: "Harmony",
       href: "https://harmony-theta.vercel.app/",
+      github: "https://github.com/marcoshaber99/thesis-project",
       dates: "Jan 2024 - Present",
       active: true,
+      isPrivate: false, 
       description:
         "Developed a SaaS document management platform with collaboration features and AI assistance. Includes real-time editing, commenting, and AI-powered text completion, summarization, and translation. Offers tiered subscriptions for various team sizes.",
-
       technologies: [
         "Next.js",
         "Typescript",
@@ -109,22 +106,16 @@ export const DATA = {
     },
     {
       title: "ProfitScan",
-      href: "https://profitscan.streamlit.app",
+      href: "#",
       dates: "June 2023 - Present",
       active: true,
+      isPrivate: true,
       description:
-        "Developed ProfitScan, a financial analysis tool that allocates expenses to transactions, generates detailed P&L accounts, and provides customizable reports. Helps businesses identify profitable segments and enhance overall financial performance.",
-
+        "Developed ProfitScan, a financial analysis tool that allocates expenses to transactions, generates detailed P&L accounts, and provides customizable reports. Helps businesses identify profitable segments and enhance overall financial performance. (Private repository)",
       technologies: ["Streamlit", "Python", "Pandas", "Numpy", "Matplotlib"],
-      links: [
-        {
-          type: "Website",
-          href: "https://profitscan.streamlit.app",
-          icon: <Icons.globe className="size-3" />,
-        },
-      ],
       image: "",
       video: "/profitscan-demo.mp4",
+      links: [], // Removed GitHub link
     },
   ],
   blogs: [
