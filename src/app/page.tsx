@@ -17,6 +17,7 @@ import { DATA } from "@/data/resume";
 import { FileText } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { DownloadIcon } from "lucide-react"; // Add this import
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -27,34 +28,42 @@ export default function Page() {
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
             <div className="flex-col flex flex-1 space-y-1.5">
-              
               <TextEffect
                 preset="fade"
                 per="word"
                 className="text-3xl font-bold tracking-wide sm:text-5xl xl:text-6xl/none font-soehne italic"
               >
-               {DATA.name}
+                {DATA.name}
               </TextEffect>
               <BlurFadeText
                 className="max-w-[600px] md:text-xl font-testsoehne mt-2"
                 text={DATA.description}
               />
-               <BlurFade delay={BLUR_FADE_DELAY * 3}>
-                <Link href="/resume">
-                  <Button variant="outline" size="sm" className="flex items-center gap-2 mt-4">
-                    <FileText className="w-4 h-4" />
-                    Full Resume
-                  </Button>
-                </Link>
+              <BlurFade delay={BLUR_FADE_DELAY * 3}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="flex items-center gap-2 mt-4"
+                  onClick={() =>
+                    window.open("/marco-haber-resume.pdf", "_blank")
+                  }
+                >
+                  <DownloadIcon className="w-4 h-4" />
+                  Download Resume
+                </Button>
               </BlurFade>
             </div>
-           
+
             <BlurFade delay={BLUR_FADE_DELAY}>
-                <Avatar className="w-28 h-28 border overflow-hidden">
-                  <AvatarImage alt={DATA.name} src={DATA.avatarUrl} className="object-cover" />
-                  <AvatarFallback>{DATA.initials}</AvatarFallback>
-                </Avatar>
-              </BlurFade>
+              <Avatar className="w-28 h-28 border overflow-hidden">
+                <AvatarImage
+                  alt={DATA.name}
+                  src={DATA.avatarUrl}
+                  className="object-cover"
+                />
+                <AvatarFallback>{DATA.initials}</AvatarFallback>
+              </Avatar>
+            </BlurFade>
           </div>
         </div>
       </section>
@@ -129,7 +138,6 @@ export default function Page() {
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   My latest projects
                 </h2>
-               
               </div>
             </div>
           </BlurFade>
@@ -165,7 +173,6 @@ export default function Page() {
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Thoughts and insights
                 </h2>
- 
               </div>
             </div>
           </BlurFade>
